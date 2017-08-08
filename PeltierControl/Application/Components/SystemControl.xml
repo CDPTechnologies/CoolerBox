@@ -1,0 +1,17 @@
+<Component Model='Controller.SystemControl' Name='SystemControl' src='Components/SystemControl.xml'>
+  <fs>5</fs>
+
+  <Signals>
+    <Signal Description='Process run time each s.' DisplayLevel='10' Input='0' Model='CDPSignal&lt;double&gt;' Name='Process Timer' Type='double' Unit='s/s'></Signal>
+    <Signal Description='Process interval [s].' DisplayLevel='10' Input='0' Model='CDPSignal&lt;double&gt;' Name='Process Period' Type='double' Unit='s'></Signal>
+    <Signal Input='0' Model='CDPSignal&lt;double&gt;' Name='reqTemp' Type='double'></Signal>
+    <Signal Input='1' Model='CDPSignal&lt;double&gt;' Name='curTemp' Type='double'  Routing='PeltierControl.sensor.pressure.Temperature.CurrentValue'></Signal>
+    <Signal Input='0' Model='CDPSignal&lt;bool&gt;' Name='fan' Type='bool'  Value='0'></Signal>
+    <Signal Input='0' Model='CDPSignal&lt;bool&gt;' Name='hotPeltier' Type='bool'></Signal>
+    <Signal Input='0' Model='CDPSignal&lt;bool&gt;' Name='coldPeltier' Type='bool'></Signal>
+  </Signals>
+
+  <Alarms>
+    <Alarm Description='A component was suspended!' DisplayLevel='10' Enabled='1' Level='Warning' Model='CDPAlarm' Name='Component Suspended' Text='Component was suspended!'></Alarm>
+  </Alarms>
+</Component>

@@ -1,0 +1,23 @@
+<Component Model='GPIOPinIO.GPIOServer' Name='gpio' src='Components/gpio.xml'>
+  <fs>100</fs>
+
+  <Signals>
+    <Signal Description='Process run time each s.' DisplayLevel='10' Input='0' Model='CDPSignal&lt;double&gt;' Name='Process Timer' Type='double' Unit='s/s'></Signal>
+    <Signal Description='Process interval [s].' DisplayLevel='10' Input='0' Model='CDPSignal&lt;double&gt;' Name='Process Period' Type='double' Unit='s'></Signal>
+    <Signal Description='Set to true when output is disabled (if parameter RD output disable control is set, and RDManager is not ActiveMaster).' Input='0' Model='CDPSignal&lt;bool&gt;' Name='outputDisabled' Type='bool'></Signal>
+    <Signal Description='The time needed to perform one send and receive.' Input='0' Model='CDPSignal&lt;double&gt;' Name='Send-Receive Roundtrip time' Type='double' Unit='s'></Signal>
+    <Signal Description='Number of items working in ioserver.' Input='0' Model='CDPSignal&lt;unsigned int&gt;' Name='NumberOfNodesOnline' Type='unsigned int' Unit='count'></Signal>
+    <Signal Description='Number of items total in ioserver.' Input='0' Model='CDPSignal&lt;unsigned int&gt;' Name='NumberOfNodes' Type='unsigned int' Unit='count'></Signal>
+  </Signals>
+
+  <Alarms>
+    <Alarm Description='A component was suspended!' DisplayLevel='10' Enabled='1' Level='Warning' Model='CDPAlarm' Name='Component Suspended' Text='Component was suspended!'></Alarm>
+    <Alarm Description='Transmission-error alarm' Enabled='1' Level='Warning' Name='Transmission Error' Text='IOServer transmission-error alarm'></Alarm>
+  </Alarms>
+
+  <GPIOPins>
+    <GPIOPin Input='1' Model='GPIOPinIO.GPIOPin' Name='peltierHeat' Nr='17' Type='bool' Value='0'  Description=''  DisableOperators='0'  InternalValue='0'  NetworkConvert='0'  RoutedProperties='Value'  Routing='PeltierControl.SystemControl.hotPeltier'  RoutingStatus=''  Status='0'  Unit='N/A'></GPIOPin>
+    <GPIOPin Input='1' Model='GPIOPinIO.GPIOPin' Name='peltierCold' Nr='27' Type='bool' Value='0'  Description=''  DisableOperators='0'  InternalValue='0'  NetworkConvert='0'  RoutedProperties='Value'  Routing='PeltierControl.SystemControl.coldPeltier'  RoutingStatus=''  Status='0'  Unit='N/A'></GPIOPin>
+    <GPIOPin Input='1' Model='GPIOPinIO.GPIOPin' Name='ventControl' Nr='22' Type='bool' Value='0'  Description=''  DisableOperators='0'  InternalValue='0'  NetworkConvert='0'  RoutedProperties='Value'  Routing='PeltierControl.SystemControl.fan'  RoutingStatus=''  Status='0'  Unit='N/A'></GPIOPin>
+  </GPIOPins>
+</Component>
