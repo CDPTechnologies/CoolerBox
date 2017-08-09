@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ProjectConfiguration>
+<!-- Written by CDPStudio 1.2.0, 2017-07-20T17:10:27. -->
+<qtcreator>
+ <data>
+  <variable>LibrarySettings</variable>
+  <valuemap type="QVariantMap">
+   <valuemap type="QVariantMap" key="Toolkits">
+    <value type="QString" key="Windows 32bit">com.cdptech.cdpstudio.cdp42.win32_12</value>
+   </valuemap>
+  </valuemap>
+ </data>
+</qtcreator>

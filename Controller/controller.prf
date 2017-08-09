@@ -1,0 +1,9 @@
+LIBNAME = Controller
+!build_pass: message($$TARGET: Including $$LIBNAME features.)
+INCLUDEPATH *= $$clean_path($$PWD/../include)
+INCLUDEPATH *= $$clean_path($$PWD/../include/$$LIBNAME)
+LIBS *= -L$$clean_path($$PWD/../lib)
+LIBS += -l$$LIBNAME$$EXT
+
+DEPSFILE = $$PWD/$$lower($$LIBNAME)_dependencies.pri
+exists($$DEPSFILE): include($$DEPSFILE)

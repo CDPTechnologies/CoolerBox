@@ -1,0 +1,5 @@
+<Library Name="Controller">
+ <Models>
+  <Model Name="Controller.SystemControl"/>
+ </Models>
+</Library>

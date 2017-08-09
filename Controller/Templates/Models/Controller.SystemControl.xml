@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<Model Version="2.0" Name="Controller.SystemControl">
+ <ModelTypeClass>C++</ModelTypeClass>
+ <BaseModel>CDPComponent</BaseModel>
+ <Priority>normal</Priority>
+ <fs>5</fs>
+ <Attributes>
+  <Attribute Name="Description" Value="Simple component"/>
+  <Attribute SaveOnChange="0" Description="Implementation model used." Name="Model" Value="Controller.SystemControl" Required="1" Type="string" ReadOnly="1"/>
+ </Attributes>
+ <Signals>
+  <Signal Model="CDPSignal&lt;double&gt;" Input="0" Name="reqTemp" Type="double"/>
+  <Signal Model="CDPSignal&lt;double&gt;" Input="0" Name="curTemp" Type="double"/>
+  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="fan" Type="bool"/>
+  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="hotPeltier" Type="bool"/>
+  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="coldPeltier" Type="bool"/>
+ </Signals>
+ <States>
+  <State Name="heatON"/>
+  <State Name="heatOff"/>
+ </States>
+ <StateTransitions>
+  <StateTransition FromState="Null" ToState="heatON" Name="NullToheatON"/>
+  <StateTransition FromState="heatON" ToState="heatOff" Name="heatONToheatOff"/>
+  <StateTransition FromState="heatOff" ToState="heatON" Name="heatOffToheatON"/>
+  <StateTransition FromState="Null" ToState="heatOff" Name="NullToheatOff"/>
+ </StateTransitions>
+ <Messages>
+  <Message Description="Resets settings to Default" Name="ResetDefault"/>
+ </Messages>
+ <Element SaveOnChange="0" LogEventOnChange="0" Description="" Name="newValue" Type="string" RouteMethod="RouteEvent"/>
+ <Element SaveOnChange="0" LogEventOnChange="0" Description="" Name="newReqValue" Type="double" RouteMethod="RouteEvent"/>
+ <Element SaveOnChange="0" LogEventOnChange="0" Name="currState" Type="string" RouteMethod="RouteEvent"/>
+</Model>
