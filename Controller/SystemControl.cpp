@@ -45,13 +45,6 @@ void SystemControl::Configure(const char* componentXML)
 
 void SystemControl::ProcessNull()
 {
-    std::call_once(onceFlag, [=] {
-        fan = false;
-        hotPeltier = false;
-        coldPeltier = false;
-        currState.SetValue("Passive");
-        newValue.SetValue("Beer");
-     });
     requestedState = (curTemp >= reqTemp) ? "heatOff" : "heatON";
 }
 

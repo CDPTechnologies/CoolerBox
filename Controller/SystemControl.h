@@ -42,7 +42,6 @@ protected:
     using CDPComponent::requestedState;
     using CDPComponent::ts;
     using CDPComponent::fs;
-    std::once_flag onceFlag;
 };
 
 } // namespace Controller

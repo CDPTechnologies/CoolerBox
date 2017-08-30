@@ -11,9 +11,9 @@
  <Signals>
   <Signal Model="CDPSignal&lt;double&gt;" Input="0" Name="reqTemp" Type="double"/>
   <Signal Model="CDPSignal&lt;double&gt;" Input="0" Name="curTemp" Type="double"/>
-  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="fan" Type="bool"/>
-  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="hotPeltier" Type="bool"/>
-  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="coldPeltier" Type="bool"/>
+  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="fan" Type="bool" value="false"/>
+  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="hotPeltier" Type="bool" value="false"/>
+  <Signal Model="CDPSignal&lt;bool&gt;" Input="0" Name="coldPeltier" Type="bool" value="false"/>
  </Signals>
  <States>
   <State Name="heatON"/>
@@ -28,7 +28,7 @@
  <Messages>
   <Message Description="Resets settings to Default" Name="ResetDefault"/>
  </Messages>
- <Element SaveOnChange="0" LogEventOnChange="0" Description="" Name="newValue" Type="string" RouteMethod="RouteEvent"/>
+ <Element SaveOnChange="0" LogEventOnChange="0" Description="" Name="newValue" Type="string" RouteMethod="RouteEvent" value="Beer"/>
  <Element SaveOnChange="0" LogEventOnChange="0" Description="" Name="newReqValue" Type="double" RouteMethod="RouteEvent"/>
- <Element SaveOnChange="0" LogEventOnChange="0" Name="currState" Type="string" RouteMethod="RouteEvent"/>
+ <Element SaveOnChange="0" LogEventOnChange="0" Name="currState" Type="string" RouteMethod="RouteEvent" value="Passive"/>
 </Model>
